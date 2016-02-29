@@ -1,0 +1,40 @@
+﻿<div class="container">
+    <div class="sidebar">
+        <div class="timerButtons k-content">
+            <kendo-button on-click="home.startUpdating()">Start update</kendo-button>
+            <kendo-button on-click="home.stopUpdating()">Stop update</kendo-button>
+            <kendo-button on-click="home.checkAllUnits()">Check all</kendo-button>
+            <kendo-button on-click="home.removeAllUnits()">Remove all</kendo-button>
+        </div>
+
+        <h4>Units</h4>
+
+        <div kendo-tree-view="home.treeView"
+             k-data-source="home.unitsData">
+            <span k-template>
+                {{dataItem.Name}} <input ng-model="dataItem.Checked" type="checkbox" ng-change="home.checkUnit(dataItem)" />
+            </span>
+        </div>
+    </div>
+
+    <div class="main">
+        <div ng-repeat="unit in home.checkedUnits">
+            <div id="gauge-container">
+                <span kendo-radialgauge
+                      k-scale="{ min:{{unit.Min}}, max: {{unit.Max}}}"
+                      ng-model="unit.Value">
+                </span>
+
+                <div class="unitTitle">
+                    <div>{{'Name:  ' + unit.Name}}</div>
+                    <div>{{'Id:    ' + unit.Id}}</div>
+                    <div>{{'Value: ' + unit.Value}}</div>
+                </div>
+
+                <div>
+                    <kendo-button on-click="home.removeUnit(unit)">Remove</kendo-button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

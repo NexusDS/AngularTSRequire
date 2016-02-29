@@ -1,0 +1,5 @@
+/TsTest/packages/**
+**/bin
+**/obj
+**/wwwroot/app
+**/wwwroot/lib

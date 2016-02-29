@@ -1,0 +1,42 @@
+﻿#gauge-container {
+    width: 140px;
+    height: auto;
+    text-align: center;
+}
+
+#gauge-container > span {
+    display: block;
+    width: 140px;
+    height: 140px;
+    margin: 0 0;
+}
+
+.container {
+    display: flex;
+}
+
+.sidebar {
+    flex: 0 0 150px;
+    height: auto;
+}
+
+.main {
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.unitTitle {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    text-align: left;
+    margin-left: 20px;
+}
+
+.timerButtons {
+    display: block;
+}
+
+.timerButtons > * {
+    margin-top: 10px;
+}
